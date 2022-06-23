@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
     <body style="background-color:#181a1b;">
     <h1 style="color:#d8d4cf">Discord Video Embedder</h1>
     <p style="color:#d8d4cf">Simply paste the link to a discord video at the end of this url(after the /, if there is none add one) to watch it in the browser instead of downloading it by default.</p>
-    <p style="color:#d8d4cf">Like this: <a href="https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4">https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4</a></p>
+    <p style="color:#d8d4cf">Like this: <a style="color:#3391ff" href="https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4">https://dc.noury.ee/https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4</a></p>
     <p style="color:#d8d4cf"><sup>this is beautiful web design shut up</sup></p>
     </body>
     </html>
