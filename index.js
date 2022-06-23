@@ -37,12 +37,15 @@ app.get('/*', function (req, res) {
         <meta name="description" content="" />
     </head>
     <body style="background-color:#181a1b;">
+    <p>
     <video
         controls
         autoplay
         width="500px"
         src="${url}"
-    >
+    />
+    </p>
+    <p style="color:#d8d4cf">Original url: <a style="color:#3391ff" href="${url}">${url}</a></p>
     </body>
     </html>
     `)
