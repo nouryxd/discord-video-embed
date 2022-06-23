@@ -2,8 +2,6 @@ const express = require('express')
 const app = express()
 
 app.get('/', function (req, res) {
-    // res.send("tagId is set to " + req.url); 
-  // res.send('Hello World')
     res.send(`
     <html>
     <!DOCTYPE html>
@@ -25,7 +23,6 @@ app.get('/', function (req, res) {
 
 app.get('/*', function (req, res) {
     var url = req.params[0];
-    // res.send("tagId is set to " + req.params[0]); 
   
     res.send(`
     <html>
