@@ -1,5 +1,5 @@
-run:
-	npm start
+build:
+	cd cmd && go build -o DiscordEmbed
 
-pm2start:
-	pm2 start "npm start" --name=dc
+run:
+	./cmd/DiscordEmbed
