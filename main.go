@@ -35,7 +35,6 @@ func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 `, host, videoUrl, host, videoUrl)
 
 	fmt.Fprintf(w, "%s", indexHtml)
-	// fmt.Fprint(w, indexHtml)
 }
 
 func Video(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
@@ -60,10 +59,9 @@ func RenderVideo(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
     </head>
     <body style="background-color:#181a1b;">
     <p>
-    <video
+	<video style="height:80%%;width:auto"
         controls
         autoplay
-        width="500px"
         src="%s"
     />
     </p>
@@ -80,5 +78,6 @@ func main() {
 	router := httprouter.New()
 	router.GET("/*video", Video)
 
+	router.NotFound = http.FileServer(http.Dir("public"))
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
