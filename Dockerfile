@@ -1,5 +1,8 @@
 # Download latest golang image
-FROM golang:latest
+FROM golang:latest as base
+
+FROM base as dev
+
 # Create a directory for the app
 RUN mkdir /app
 
@@ -15,3 +18,4 @@ RUN go get ./...
 RUN cd cmd && go build -o DiscordEmbed
 
 CMD ["/app/cmd/DiscordEmbed"]
+
