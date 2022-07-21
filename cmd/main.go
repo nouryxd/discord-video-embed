@@ -9,7 +9,8 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-var host = "https://dc.noury.ee"
+var HOST = "https://dc.noury.ee"
+var PORT = "8080"
 
 func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	var videoUrl = "https://cdn.discordapp.com/attachments/381520882608373761/989666371178754068/denkcats_1639474686233272.mp4"
@@ -32,7 +33,7 @@ func Index(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
     <p style="color:#d8d4cf"><sup>this is beautiful web design shut up</sup></p>
     </body>
 </html>
-`, host, videoUrl, host, videoUrl)
+`, HOST, videoUrl, HOST, videoUrl)
 
 	fmt.Fprintf(w, "%s", indexHtml)
 }
@@ -78,6 +79,7 @@ func main() {
 	router := httprouter.New()
 	router.GET("/*video", Video)
 
-	router.NotFound = http.FileServer(http.Dir("public"))
-	log.Fatal(http.ListenAndServe(":8080", router))
+	fmt.Printf("Running on port %s\n", PORT)
+	fmt.Printf("On host: %s\n", HOST)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", PORT), router))
 }
